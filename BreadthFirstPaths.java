@@ -15,7 +15,6 @@ public class BreadthFirstPaths {
         bfs(G, s);
     }
 
-
     // breadth-first search from a single source
     private void bfs(Graph G, int s) {
         Queue<Integer> q = new Queue<>();
@@ -66,30 +65,6 @@ public class BreadthFirstPaths {
             throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
     }
 
-    // throw an IllegalArgumentException if vertices is null, has zero vertices,
-    // or has a vertex not between 0 and V-1
-    private void validateVertices(Iterable<Integer> vertices) {
-        if (vertices == null) {
-            throw new IllegalArgumentException("argument is null");
-        }
-        int vertexCount = 0;
-        for (Integer v : vertices) {
-            vertexCount++;
-            if (v == null) {
-                throw new IllegalArgumentException("vertex is null");
-            }
-            validateVertex(v);
-        }
-        if (vertexCount == 0) {
-            throw new IllegalArgumentException("zero vertices");
-        }
-    }
-
-    /**
-     * Unit tests the {@code BreadthFirstPaths} data type.
-     *
-     * @param args the command-line arguments
-     */
     public static void main(String[] args) {
          // TODO code application logic here
         Graph g = new Graph(5);
@@ -117,6 +92,4 @@ public class BreadthFirstPaths {
             }
         }
     }
-
-
 }
